@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Okinaga Mami Portfolio site</title>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/works.css">
+  <link rel="stylesheet" href="./images/">
+
+  <!-- AdobeフォントYu Gothic ProN R 読み込み -->
+  <script>
+    (function (d) {
+      var config = {
+        kitId: 'pnz8nnf',
+        scriptTimeout: 3000,
+        async: true
+      },
+        h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+    })(document);
+  </script>
+
+  <!-- AdobeフォントGaramond Premier 読み込み -->
+  <script>
+    (function (d) {
+      var config = {
+        kitId: 'pnz8nnf',
+        scriptTimeout: 3000,
+        async: true
+      },
+        h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+    })(document);
+  </script>
+  <!-- jquery読み込み -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <header id="header">
+    <div class="header__inner">
+      <!-- ヘッダーロゴ -->
+      <h1>
+        <a href="./index.html">
+          <picture>
+            <source srcset="./images/main-logo-sp.png" media="(max-width: 1100px)" sizes="150px">
+            <img src="./images//main-logo.png" alt="design geniessen">
+          </picture>
+        </a>
+      </h1>
+      <!--  ナビゲーションメニュー -->
+      <nav class="header_nav">
+        <ul class="header_nav_works">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#concept">Concept</a></li>
+          <li><a href="./index.html#profile">Profile</a></li>
+          <li><a href="./index.html#works">Works</a></li>
+          <li><a href="./index.html#special-thanks">Special Thanks</a></li>
+          <li><a href="./index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!--　ハンバーガーメニュー -->
+    <div class="hamburger__works">
+      <span></span>
+    </div>
+    <div class="header__nav-sp_wrapper">
+      <nav class="header__nav-sp">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#concept">Concept</a></li>
+          <li><a href="./index.html#profile">Profile</a></li>
+          <li><a href="./index.html#works">Works</a></li>
+          <li><a href="./index.html#special-thanks">Special Thanks</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!--ナビゲーションメニューの背景に色を付ける  -->
+    <div class="change-color-point"></div>
+  </header>
+  <!-- Contact ロゴ -->
+  <!-- <section id="main-visual"> -->
+  <div class="form__wrapper">
+    <h2><img src="./images/logo.png" alt="">
+      <p data-aos="fade-right" data-aos-duration="3000">Contact</p>
+    </h2>
+
+    <form
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSccb91kAH1uJ9sw_75w9bS6Or_u9KL8OGhiuz898ri9viWlCQ/formResponse"
+      method="post" name="Contact-form" target="hidden_iframe" onsubmit="submitted=true">
+      <div class="form__inner">
+        <p>お名前</p>
+        <input name="entry.1694290779" type="text" placeholder="  Name">
+        <p>メールアドレス</p>
+        <input name="entry.1203794708" type=" Email" placeholder="Email address" class="Email">
+        <p>お問い合わせ内容</p>
+        <textarea name="entry.1946766984" placeholder=" お問い合わせ内容を入力" class="submit_textarea"></textarea>
+        <div class="submit"><input type="submit" value="送信" class="submit"></div>
+      </div>
+    </form>
+  </div>
+
+  <!-- フッター -->
+  <footer>
+    <!--トップに戻るボタン -->
+    <div class="back-to-top_button">
+      <a href="burger-banner.html"><span></span>back to top</a>
+    </div>
+    <!-- メインロゴ -->
+    <div class="footer__inner">
+      <h1>
+        <a href="index.html">
+          <picture>
+            <source srcset="./images/main-logo-sp.png" media="(max-width: 1100px)" sizes="150px">
+            <img src="./images/main-logo.png" alt="design geniessen">
+          </picture>
+        </a>
+      </h1>
+
+      <!-- ナビゲーションメニュー -->
+      <nav class="footer_nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#concept">Concept</a></li>
+          <li><a href="./index.html#profile">Profile</a></li>
+          <li><a href="./index.html#works">Works</a></li>
+          <li><a href="./index.html#special-thanks">Special Thanks</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- フッター画像 -->
+    <div class="footer__img">
+      <p class="copyright">copyright 2024 OKINAGA MAMI</p>
+      <picture>
+        <source srcset="./images/footer_sp_1@2x-100.jpg" media="(max-width: 767px)">
+        <img src="./images/footer@2x-100.jpg" alt="フッター画像">
+      </picture>
+    </div>
+
+
+  </footer>
+  <script>
+    AOS.init();
+    // jquery入ってるか確認！
+    // $(function () {
+    //   alert('jQuery is ready.')
+    // });
+
+    // ヘッダー背景に色を付ける
+    $(function () {
+      $(window).on('scroll', function () {
+        if ($('.change-color-point').height() < $(this).scrollTop()) {
+          $('.header__inner').addClass('change-color_works');
+        } else {
+          $('.header__inner').removeClass('change-color_works');
+        }
+      });
+      $(".hamburger__works").on("click", function () {
+        $(".header__nav-sp").fadeToggle();
+        $(".hamburger__works").toggleClass("open");
+      })
+    });
+
+    let submitted = false;
+  </script>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display: none"
+    onload="if(submitted){window.location='./thanks-page.html';}"></iframe>
+</body>
+
+</html>

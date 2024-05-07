@@ -1,0 +1,381 @@
+@charset "utf-8";
+
+/* 背景　バックグラウンドイメージ */
+body {
+  background-image: url(../images/background.jpg);
+  background-repeat: repeat;
+  background-color: rgba(255, 255, 255, 0.57);
+  background-blend-mode: screen;
+  background-size: 100%;
+  background-size: 700px;
+ }
+
+ /* ヘッダー */
+/* トップロゴ */
+header picture img{
+  width: 368px;
+}
+h1 picture .header__logo-sp{
+  width: 200px;
+}
+/* ナビゲーションメニュー */
+.header__inner{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 40px 3% 13px 2%;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+#header .header_nav ul,
+.header_nav_works{
+  display: flex;
+  gap: 40px;
+}
+
+#header .header_nav ul li{
+  line-height: 1.5;
+  font-size: 16px;
+  color: white;
+  font-weight: 250;
+  padding: 8px 0;
+}
+
+.header__nav-sp{
+  display: none;
+}
+/*==================================================
+共通　横並びのための設定
+===================================*/
+
+.header_nav_works,
+.footer_nav ul{
+  display: flex;
+}
+
+.header_nav_works li a,
+.footer_nav ul li a,
+.header_nav_main-page a{
+  display: block;
+  padding:5px 5px;
+  text-decoration: none;
+  color: #333;
+}
+.header_nav_main-page a{
+  color: white;
+}
+
+.header_nav_works li,
+.footer_nav ul li,
+.header_nav_main-page li{
+  margin-bottom:20px;
+}
+
+/*==================================================
+　5-3-3 左から右に線が伸びる（下部）
+===================================*/
+.header_nav_works li a,
+.footer_nav ul li a,
+.header_nav_main-page a,
+.back-to-top_button a{
+position: relative;/*線の基点とするためrelativeを指定*/
+}
+
+.header_nav_works li a:hover,
+.footer_nav ul li a:hover,
+.header_nav_main-page li a:hover,
+.back-to-top_button a:hover{
+color: #2d2d2d;
+}
+.header_nav_main-page li a:hover{
+color:white;
+}
+
+.header_nav_works li a::after,
+.header_nav_main-page li a::after,
+.footer_nav ul li a::after,
+.back-to-top_button a::after{
+  content: ''; /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: 0;
+  left: 10%;/*線の形状*/
+  width: 80%;
+  height: 1px;
+  background:#2d2d2d; /*アニメーションの指定*/
+  transition: all .5s;
+  transform: scale(0, 1);/*X方向0、Y方向1*/
+  transform-origin: left top;/*左上基点*/
+}
+.header_nav_main-page li a::after{
+  background: white;
+}
+
+/*現在地とhoverの設定*/
+.header_nav_works li a:hover::after,
+.footer_nav ul li a:hover::after,
+.header_nav_main-page li a:hover::after,
+.back-to-top_button a:hover::after{
+  transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+
+/* ナビゲーションメニューの背景に色を付ける */
+header .change-color-point{
+  position: absolute;
+  top: 120px;
+}
+header .change-color{
+  background-color: #cccccc; 
+  opacity: 0.75;
+  transition: 2s;
+}
+header .change-color_works{
+  background-color: white; 
+  opacity: 0.9;
+  transition: 2s;
+}
+
+/* ハンバーガーメニュー */
+#header .hamburger,
+#header .header__nav-sp_wrapper .header_nav-sp{
+  display: none;
+}
+
+/*ヘッダーナビ
+フッターナビ
+1100ｐｘ以下はここから読み込み
+共通 */
+@media screen and (max-width:1100px){
+header .change-color{
+  background-color: transparent;
+}
+header picture img,
+footer h1 picture img{
+  width: 150px;
+}
+/* ハンバーガーメニュー */
+#header .header_nav,
+.header_nav_works{
+  display: none;
+}
+#header .hamburger,
+#header .hamburger__works{
+  display: block;
+  width: 32px;
+  height: 28px;
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  z-index: 9999;
+  transition: 0.5s;
+  cursor: pointer;
+}
+#header .hamburger span,
+#header .hamburger__works span{
+  position: absolute;
+  content: "";
+  width: 32px;
+  height: 1.8px;
+  background-color: white;
+  top: 16px;
+  transition: 0.5s;
+}
+#header .hamburger__works span{
+  background-color: #333;
+}
+#header .hamburger span::before,
+#header .hamburger__works span::before{
+  position: absolute;
+  content: "";
+  width: 23px;
+  height: 1.8px;
+  right: 0;
+  background-color: white;
+  bottom: -12px;
+  transition: 0.5s;
+}
+#header .hamburger__works span::before{
+  background-color: #333;
+}
+#header .hamburger span::after,
+#header .hamburger__works span::after{
+  position: absolute;
+  content: "";
+  width: 32px;
+  height: 1.8px;
+  right: 0;
+  background-color: white;
+  bottom: 12px;
+  transition: 0.5s;
+}
+#header .hamburger__works span::after{
+  background-color: #333;
+}
+#header .open span{
+  background-color: transparent;
+}
+#header .open span::before{
+  width: 32px;
+  transform: rotate(45deg);
+  top: 0;
+}
+#header .open span::after{
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+#header .header__nav-sp{
+  position: absolute;
+  width: 83%;
+  height: 100vh;
+  background-color:rgba(255, 255, 255, 0.8);
+  z-index: 110;
+}
+#header .header__nav-sp ul{
+  display: flex;
+  gap: 42px;
+  flex-direction: column;
+  align-items: start;
+  /* height: 100%; */
+  margin-top: 40%;
+  margin-left: 13%;
+}
+#header .header__nav-sp ul li{
+  font-size: 22px;
+  z-index: 9999;
+}
+}
+
+/* ロゴ 共通部分 */
+/* #profile h3, */
+h3{
+  position: relative;
+  margin-top: 280px;
+}
+/* #profile h3 img, */
+h3 img{
+  width: 266px;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+/* #profile h3 p, */
+h3 p{
+  font-size: 4.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+/* ロゴ 共通部分767px以下はここから読み込み */
+@media screen and (max-width: 767px){
+  h3 img{
+  width:  170px;
+}
+  h3 p{
+  font-size: 47px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+}
+
+/* フッター */
+footer .back-to-top_button{
+  text-align: right;
+  margin: 200px 3.5% 100px;
+  padding: 5px 5px;
+}
+footer .back-to-top_button a{
+  padding-bottom: 7px;
+}
+footer .back-to-top_button span{
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+}
+footer .back-to-top_button span::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    border: 0;
+    border-top: solid 1px #2d2d2d;
+    border-right: solid 1px #2d2d2d;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: -2px;
+    left: -7px;
+    bottom: 0;
+    margin: auto;
+  }
+
+
+/* フッター　ナビゲーションメニュー */
+footer h1 img{
+  width: 368px;
+}
+footer h1 picture .footer__logo-sp{
+  width: 200px;
+}
+footer .footer__inner{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 2%;
+  padding-right: 3%;
+  margin-bottom: 70px;
+  align-items: center;
+  z-index: 100;
+}
+footer nav ul{
+  display: flex;
+  gap: 40px;
+  font-size: 16px;
+}
+footer nav ul li{
+  line-height: 1.5;
+}
+footer .footer__img{
+  width: 100%;
+  position: relative;
+}
+footer .footer__img .copyright{
+  position: absolute;
+  right: 0;
+  left: 0;
+  text-align: center;
+  margin: 0 auto;
+  bottom: 8%;
+  align-items: center;
+  font-size: 10px;
+}
+footer .footer__sp-logo{
+  display: none;
+}
+
+
+/* フッター767px以下はここから読み込み */
+@media screen and (max-width:767px){
+  
+ footer .back-to-top_button{
+    padding: 9%, 20px;
+ }
+  footer .footer__inner{
+    display: block;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  footer nav ul li{
+    padding-bottom: 26px;
+  }
+  footer nav ul{
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 8%;
+  }
+  footer h1{
+    text-align: center;
+    padding-bottom: 45px;
+    
+  }
+}
